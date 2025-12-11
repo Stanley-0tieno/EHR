@@ -41,4 +41,8 @@ public class Staff {
     public void preUpdate() {
         updatedAt = LocalDateTime.now();
     }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 }
