@@ -8,6 +8,8 @@ import com.ehr.dto.StaffCreateDto;
 import com.ehr.models.Staff;
 import com.ehr.repository.StaffRepository;
 
+import java.util.Optional;
+
 @Service
 public class StaffService {
     
@@ -30,5 +32,9 @@ public class StaffService {
         staff.setPassword(passwordEncoder.encode(dto.getPassword()));
 
         return staffRepository.save(staff);
+    }
+
+    public Optional<Staff> findByWorkId(String workId){
+        return this.staffRepository.findByWorkId(workId);
     }
 }
